@@ -1,7 +1,7 @@
 
 # 🌐 AWS S3 Static Website Hosting
 
-This project hosts a static website using **Amazon S3** with optional **CloudFront CDN** and **Route 53** for custom domain configuration. The site is fully client-side, using HTML, CSS, and JavaScript.
+This project hosts a static website using **Amazon S3**. The site is fully client-side, using HTML, CSS, and JavaScript.
 
 ---
 
