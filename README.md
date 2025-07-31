@@ -20,14 +20,11 @@ This project hosts a static website using **Amazon S3**. The site is fully clien
 ```text
 .
 ├── index.html
-├── about.html
-├── contact.html
 ├── css/
 │   └── styles.css
-├── js/
+├── JavaScript/
 │   └── script.js
 ├── assets/
-│   └── images/
 └── README.md
 
 ```
