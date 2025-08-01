@@ -26,7 +26,7 @@ aws-static-website-s3/
 ## ✅ Prerequisites
 AWS CLI - configured with access keys
 ```
-- https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 ```
 Terraform
 ```
@@ -41,7 +41,7 @@ https://developer.hashicorp.com/terraform/downloads
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone https://github.com/your-username/terraform-s3-static-website.git
 cd terraform-s3-static-website
 ````
