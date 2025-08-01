@@ -1,55 +1,125 @@
+```markdown
+# 🚀 Static Website Hosting on AWS S3 using Terraform
 
-# 🌐 AWS S3 Static Website Hosting
+This project demonstrates how to securely host a static website using **Amazon S3** and **Terraform**. It includes Terraform scripts to:
 
-This project hosts a static website using **Amazon S3**. The site is fully client-side, using HTML, CSS, and JavaScript.
-
----
-
-## 🚀 Features
-
-- Host a static website using AWS S3
-- Optional CloudFront CDN for improved performance
-- HTTPS via AWS Certificate Manager (ACM)
-- Custom domain with Route 53 (optional)
-- SEO-ready and mobile-responsive design
+- Create and configure an S3 bucket
+- Enable static website hosting
+- Upload `index.html` and `error.html`
+- Apply secure access policies
 
 ---
 
 ## 📁 Project Structure
 
-```text
-.
-├── index.html
-├── css/
-│   └── styles.css
-├── JavaScript/
-│   └── script.js
-├── assets/
-└── README.md
+```
+
+terraform-s3-static-website/
+├── Website/
+│   ├── index.html
+│   └── error.html
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── versions.tf
+└── terraform.tfvars
+
+````
+
+---
+
+## ✅ Prerequisites
+
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (configured with access keys)
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
+- An AWS account with permissions to create S3 buckets
+
+---
+
+## ⚙️ Setup & Usage
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/terraform-s3-static-website.git
+cd terraform-s3-static-website
+````
+
+### 2. Set Your Variables
+
+Update `terraform.tfvars`:
+
+```hcl
+bucket_name = "your-unique-s3-bucket-name"
+region      = "ap-south-1"
+```
+
+Make sure the bucket name is globally unique.
+
+---
+
+### 3. Initialize Terraform
+
+```bash
+terraform init
+```
+
+---
+
+### 4. Preview the Changes
+
+```bash
+terraform plan
+```
+
+---
+
+### 5. Apply the Configuration
+
+```bash
+terraform apply
+```
+
+Type `yes` when prompted.
+
+---
+
+### 6. Access the Website
+
+After successful deployment, Terraform will output the **Website URL**:
 
 ```
-## 🛠️ Deployment Steps
-
-### 1. Create an S3 Bucket
-
-- Go to AWS S3 → Create Bucket
-- Bucket name must match your domain name (e.g., `example.com`)
-- Uncheck **Block all public access**
-- Enable static website hosting (upload your `index.html` and optionally `error.html`)
-
-### 2. Set Bucket Policy
-
-Add a bucket policy to allow public access:
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Sid": "PublicReadGetObject",
-    "Effect": "Allow",
-    "Principal": "*",
-    "Action": "s3:GetObject",
-    "Resource": "arn:aws:s3:::example.com/*"
-  }]
-}
+Website URL: http://your-bucket-name.s3-website.ap-south-1.amazonaws.com
 ```
+
+---
+
+## 🔐 Security Notes
+
+* S3 bucket access is restricted via ACL and only allowed through a specific public-read **bucket policy**.
+* Public access settings are explicitly managed to prevent unintended exposure.
+
+---
+
+## 🧹 Cleanup
+
+To delete all AWS resources created:
+
+```bash
+terraform destroy
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Author
+
+Made with ❤️ by \[Vikas Vishwakarma]
+Reach out: \[[vikaspvishwakarma@gmail.com](mailto:vikaspvishwakarma@gmail.com)]
+
+---

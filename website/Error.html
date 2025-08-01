@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Not Found - ShopEase</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+        .error-hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .error-hero h1 {
+            font-size: 6rem;
+            margin: 0;
+            color: #dc3545;
+        }
+        .error-hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0 2rem 0;
+            color: #6c757d;
+        }
+        .error-hero button {
+            background-color: #ffc107;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .error-hero button:hover {
+            background-color: #e0a800;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ShopEase</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="error-hero">
+        <h1>404</h1>
+        <p>Oops! The page you are looking for does not exist.</p>
+        <button onclick="window.location.href='index.html'">Go back to Home</button>
+    </section>
+    <footer>
+        &copy; 2024 ShopEase. All rights reserved.
+        <br />
+        <a href="#" aria-label="Facebook">Facebook</a> |
+        <a href="#" aria-label="Twitter">Twitter</a> |
+        <a href="#" aria-label="Instagram">Instagram</a>
+    </footer>
+</body>
+</html>

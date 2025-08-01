@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ShopEase - Your One-Stop Ecommerce Store</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);
+            text-align: center;
+            padding: 0 1rem;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero button {
+            background-color: #ffc107;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .hero button:hover {
+            background-color: #e0a800;
+        }
+        .products {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-info h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .product-info p {
+            flex-grow: 1;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .product-info .price {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #28a745;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ShopEase</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Discover the Best Deals</h2>
+        <p>Shop the latest trends and exclusive offers</p>
+        <button onclick="window.location.href='#products'">Shop Now</button>
+    </section>
+    <section id="products" class="products">
+        <div class="product-card">
+            <img class="product-image" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80" alt="Smart Watch" />
+            <div class="product-info">
+                <h3>Smart Watch</h3>
+                <p>Stay connected and track your fitness with this sleek smart watch.</p>
+                <div class="price">$199.99</div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80" alt="Wireless Headphones" />
+            <div class="product-info">
+                <h3>Wireless Headphones</h3>
+                <p>Experience high-quality sound without the wires.</p>
+                <div class="price">$149.99</div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://images.unsplash.com/photo-1604846887565-640d2f52d564?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gaming Console" />
+            <div class="product-info">
+                <h3>Gaming Console</h3>
+                <p>Enjoy immersive gaming with the latest console technology.</p>
+                <div class="price">$399.99</div>
+            </div>
+        </div>
+        <div class="product-card">
+            <img class="product-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Laptop" />
+            <div class="product-info">
+                <h3>Laptop</h3>
+                <p>Powerful performance for work and play.</p>
+                <div class="price">$899.99</div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 ShopEase. All rights reserved.
+        <br />
+        <a href="#" aria-label="Facebook">Facebook</a> |
+        <a href="#" aria-label="Twitter">Twitter</a> |
+        <a href="#" aria-label="Instagram">Instagram</a>
+    </footer>
+</body>
+</html>

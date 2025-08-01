@@ -1,0 +1,71 @@
+resource "aws_s3_bucket" "static_site" {
+  bucket = var.bucket_name
+  force_destroy = true
+
+  tags = {
+    Name        = "StaticWebsite"
+    Environment = "Production"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "block_public_access" {
+  bucket = aws_s3_bucket.static_site.id
+
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_policy" "allow_public_read" {
+  bucket = aws_s3_bucket.static_site.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "PublicReadGetObject"
+        Effect    = "Allow"
+        Principal = "*"
+        Action    = "s3:GetObject"
+        Resource  = "${aws_s3_bucket.static_site.arn}/*"
+      }
+    ]
+  })
+}
+
+resource "aws_s3_bucket_website_configuration" "website" {
+  bucket = aws_s3_bucket.static_site.bucket
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
+}
+
+# resource "aws_s3_object" "index" {
+#   bucket       = aws_s3_bucket.static_site.bucket
+#   key          = "index.html"
+#   source       = "${path.module}/Website/index.html"
+#   content_type = "text/html"
+#   acl          = "public-read"
+# }
+
+resource "aws_s3_object" "index" {
+  bucket       = aws_s3_bucket.static_site.bucket
+  key          = "index.html"
+  source       = "${path.module}/Website/index.html"
+  content_type = "text/html"
+}
+
+
+resource "aws_s3_object" "error" {
+  bucket       = aws_s3_bucket.static_site.bucket
+  key          = "error.html"
+  source       = "${path.module}/Website/error.html"
+  content_type = "text/html"
+#   acl          = "public-read"
+}
