@@ -46,14 +46,6 @@ resource "aws_s3_bucket_website_configuration" "website" {
   }
 }
 
-# resource "aws_s3_object" "index" {
-#   bucket       = aws_s3_bucket.static_site.bucket
-#   key          = "index.html"
-#   source       = "${path.module}/Website/index.html"
-#   content_type = "text/html"
-#   acl          = "public-read"
-# }
-
 resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.static_site.bucket
   key          = "index.html"
@@ -61,11 +53,9 @@ resource "aws_s3_object" "index" {
   content_type = "text/html"
 }
 
-
 resource "aws_s3_object" "error" {
   bucket       = aws_s3_bucket.static_site.bucket
   key          = "error.html"
   source       = "${path.module}/Website/error.html"
   content_type = "text/html"
-#   acl          = "public-read"
 }
